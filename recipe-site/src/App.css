@@ -1,5 +1,23 @@
 .App {
-  text-align: center;
+  text-align: left;
+  color: black;
+  padding: 25px 50px;
 }
 
+.navbar{
+  display: flex;
+  justify-content: space-evenly; 
+  background-color: antiquewhite;
+}
 
+.navbar-link{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin: 30px; 
+}
+
+.navbar-link:hover{
+  background-color: white;
+
+}
