@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link, Navigate } from "react-router-dom";
 import Entrees from "./pages/Entrees";
 import Desserts from "./pages/Desserts";
 import Breakfast from "./pages/Breakfast";
@@ -8,16 +8,11 @@ import Sides from "./pages/Sides";
 import Drinks from "./pages/Desserts";
 import { recipeArray } from "./data";
 import RecipeCard from "./components/RecipeCard";
+import { tabArray } from "./data";
+import logo from "./images/logo.jpeg";
+import Home from "./pages/Home";
 
 const App = () => {
-  const tabArray = [
-    { name: "Entrees", colour: "#f2f4c2", fontColour: "#879d57" },
-    { name: "Breakfast", colour: "#EFEDF8", fontColour: "#817d98" },
-    { name: "Lunch", colour: "#e5f7f5", fontColour: "#64938c" },
-    { name: "Desserts", colour: "#e7f6fd", fontColour: "#8ba5b7" },
-    { name: "Sides", colour: "#feeecb", fontColour: "#b29466" },
-    { name: "Drinks", colour: "#ffebe4", fontColour: "#cf7973" },
-  ];
   const navBarLinks = tabArray.map((tab) => {
     return (
       <Link
@@ -30,25 +25,38 @@ const App = () => {
       </Link>
     );
   });
-  const recipeCards = recipeArray.map((recipe) => {
-    return <RecipeCard key={recipe.title} recipeData={recipe} />;
-  });
-  console.log(recipeCards);
+
   return (
     <BrowserRouter>
       <>
         <div className="App">
+          <div className="search-bar-ribbons">
+            <div className="logo">
+              <img src={logo} alt="" />
+            </div>
+            <div className="search-bar">
+              <input type="text" placeholder="Search.."></input>
+            </div>
+            <div className="ribbons">
+              <a href="#recipes">Recipes</a>
+              <a href="#about">About</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+
           <h1 className="page-title"> All recipes</h1>
           <nav className="navbar">{navBarLinks}</nav>
-          <div className="recipe-box">{recipeCards}</div>
 
           <Routes>
+          <Route path="/" element={<Navigate replace to="/home" />} />
+            <Route path="/home" element={<Home />}></Route>
             <Route path="/entrees" element={<Entrees />}></Route>
             <Route path="/breakfast" element={<Breakfast />}></Route>
             <Route path="/lunch" element={<Lunch />}></Route>
             <Route path="/desserts" element={<Desserts />}></Route>
             <Route path="/sides" element={<Sides />}></Route>
             <Route path="/drinks" element={<Drinks />}></Route>
+            
           </Routes>
         </div>
       </>
