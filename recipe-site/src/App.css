@@ -5,66 +5,98 @@
   background-color: #f8f7f3;
   flex-direction: column;
   align-items: center;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
+  min-height: 100vh;
 }
 
-.navbar{
+.navbar {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   width: 100%;
   gap: 20px;
   padding-bottom: 30px;
 }
 
-.navbar-link{
+.navbar-link {
   text-decoration: none;
   /* color: #879d57; */
-  font-weight: bold; 
+  font-weight: bold;
   padding: 5px 25px;
   border-radius: 40px;
   /* background-color: #f2f4c2; */
   letter-spacing: 2px;
 }
 
-.navbar-link:hover{
+.navbar-link:hover {
   background-color: white;
-
 }
 
-.page-title{
+.homepage-title {
   padding: 150px 10px 10px 10px;
   font-size: 3em;
-  color: #152226 
+  color: #152226;
 }
 
-.recipe-box{
+.page-title {
+  padding: 10px;
+  font-size: 3em;
+  color: #152226;
+  display: flex;
+  justify-content: center;
+
+}
+
+.recipe-box {
   display: flex;
   flex-wrap: wrap;
-  
+  justify-content: space-around;
 }
 
-.search-bar-ribbons{
+.home-recipies-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar-ribbons {
   /* overflow: hidden; */
   width: 100%;
-  background-color: gray;
   display: flex;
   justify-content: space-between;
-   align-items: center;
-  padding: 10px; 
+  align-items: center;
+  padding: 10px;
   flex-wrap: wrap;
 }
-.search-bar input{
-   padding: 14px 16px;
+.logo-searchbar {
+  display: flex;
+  width: 75px;
+  padding: 14px 16px;
+}
+
+.search-bar input {
+  padding: 14px 16px;
   border: none;
   margin-top: 8px;
   margin-right: 16px;
-  font-size: 17px; 
+  font-size: 17px;
 }
 
-.ribbons a{
+.ribbons a {
   color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
+
+.socials-logo {
+  padding: 5px;
+  height: 35px;
+  width: 35px;
+}
+
+.ribbons-and-socials{
+  display: flex;
+
+}
+

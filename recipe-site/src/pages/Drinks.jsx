@@ -1,19 +1,19 @@
-import { breakfastArray } from "../data/breakfastData";
+import { drinksArray } from "../data/drinksData";
 import RecipeCard from "../components/RecipeCard";
 
 
-const Breakfast = () => {
-  const recipeCards = breakfastArray.map((recipe) => {
+const Drinks = () => {
+  const recipeCards = drinksArray.map((recipe) => {
     return <RecipeCard key={recipe.title} recipeData={recipe} />;
   });
   console.log(recipeCards);
 
   return (
-    <div id= "breakfast_list">
-      <h1 className="page-title"> Breakfast</h1>
+    <div id= "drinks_list">
+      <h1 className="page-title"> Drinks </h1>
       { <div className="recipe-box">{recipeCards}</div> }
     </div>
   );
 };
 
-export default Breakfast;
+export default Drinks;

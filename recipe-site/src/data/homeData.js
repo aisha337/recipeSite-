@@ -5,6 +5,7 @@ export const recipeArray = [
     title: "Pineapple + Smoked Jackfruit pizza",
     tab: "Entrees",
     duration: "45 minutes",
+    url: "/recipe?recipe=pineapple-pizza",
   },
   {
     image:
@@ -12,6 +13,7 @@ export const recipeArray = [
     title: "Air Fryer Steak Fries",
     tab: "Sides",
     duration: "30 minutes",
+    url: "/recipe?recipe=air-fryer-steak-fries",
   },
   {
     image:
@@ -20,6 +22,7 @@ export const recipeArray = [
     title: "Quick Strawberry Shortcake Cupcakes",
     tab: "Desserts",
     duration: "45 minutes",
+    url: "/recipe",
   },
   {
     image:
@@ -28,6 +31,7 @@ export const recipeArray = [
     title: "Chicken Ceaser Salad",
     tab: "Sides",
     duration: "30 minutes",
+    url: "/recipe",
   },
 ];
 
