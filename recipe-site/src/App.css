@@ -73,12 +73,29 @@
   padding: 14px 16px;
 }
 
+.search-bar{
+  display: flex;
+}
 .search-bar input {
   padding: 14px 16px;
   border: none;
   margin-top: 8px;
-  margin-right: 16px;
   font-size: 17px;
+ 
+}
+.search-bar button{
+  background: WHITE;
+  border: none;
+  margin-top: 8px;
+}
+.search-icon{
+  float: left;
+  width: 20%;
+  padding: 10px;
+  color: white;
+  font-size: 17px;
+  background-image: url('https://www.pngplay.com/wp-content/uploads/15/Magnifying-Glass-Icon-PNG-HD-Quality.png');
+  background-size: cover;
 }
 
 .ribbons a {

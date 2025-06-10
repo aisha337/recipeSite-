@@ -8,15 +8,10 @@ const RecipeCard = ({ recipeData }) => {
   });
 
   return (
-    <Link
-      key={recipeData.title}
-      // style={{ backgroundColor: tab.colour, color: tab.fontColour }}
-      // className="navbar-link"
-      to={recipeData.url}
-    >
+    <Link key={recipeData.title} to={recipeData.url}>
       <div className="recipe-container">
         <div
-          className="recipe-image"
+          className="recipe-box-image"
           style={{ backgroundImage: `url(${recipeData.image})` }}
         ></div>
         <div className="recipe-title">

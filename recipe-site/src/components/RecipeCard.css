@@ -18,13 +18,13 @@
   font-size: 25px;
 }
 
-.recipe-image {
+.recipe-box-image {
   width: 100%;
   height: 200px;
-  background-size: cover; /* Makes image cover the container */
-  background-position: center; /* Centers image */
-  background-repeat: no-repeat; /* Prevents tiling */
-  border-radius: 15px; /* Adds rounded corners */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  border-radius: 15px; 
 }
 
 .recipe-tab {

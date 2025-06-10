@@ -5,9 +5,8 @@ import Desserts from "./pages/Desserts";
 import Breakfast from "./pages/Breakfast";
 import Lunch from "./pages/Lunch";
 import Sides from "./pages/Sides";
-import Drinks from "./pages/Desserts";
+import Drinks from "./pages/Drinks";
 import { recipeArray } from "./data/homeData";
-import RecipeCard from "./components/RecipeCard";
 import { tabArray } from "./data/homeData";
 import logo from "./images/logo.jpeg";
 import Home from "./pages/Home";
@@ -16,11 +15,39 @@ import pintrest from "./images/pintrest.jpeg";
 import youtube from "./images/youtube.jpeg";
 import instagram from "./images/instagram.jpeg";
 import Recipe from "./pages/Recipe";
-import { useState } from "react";
+import { SearchBox } from "./components/searchBox";
+import { breakfastArray } from "./data/breakfastData";
+import { useMemo, useState } from "react";
+import { entreesArray } from "./data/entreesData";
+import { dessertsArray } from "./data/dessertsData";
+import { drinksArray } from "./data/drinksData";
+import { lunchArray } from "./data/lunchData";
 
 const App = () => {
   const [search, setSearchQuery] = useState("");
-  console.log(search);
+  const recipeData = useMemo(
+    () => [
+      ...breakfastArray,
+      ...recipeArray,
+      ...dessertsArray,
+      ...drinksArray,
+      ...entreesArray,
+      ...lunchArray,
+    ],
+    [
+      breakfastArray,
+      recipeArray,
+      dessertsArray,
+      drinksArray,
+      entreesArray,
+      lunchArray,
+    ]
+  );
+  const filteredRecipe = recipeData.filter(
+    (recipe) =>
+      search.length > 0 &&
+      recipe.title.toLowerCase().includes(search.toLowerCase())
+  );
   const navBarLinks = tabArray.map((tab) => {
     return (
       <Link
@@ -44,13 +71,7 @@ const App = () => {
                 <a href="/">
                   <img className="logo-searchbar" src={logo} alt="" />{" "}
                 </a>
-              </div>
-              <div className="search-bar">
-                <input
-                  type="text"
-                  placeholder="Search.."
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                ></input>
+                <SearchBox setSearchQuery={setSearchQuery} search={search} />
               </div>
             </div>
             <div className="ribbons">
@@ -70,14 +91,40 @@ const App = () => {
 
           <Routes>
             <Route path="/" element={<Navigate replace to="/home" />} />
-            <Route path="/home" element={<Home />}></Route>
-            <Route path="/entrees" element={<Entrees />}></Route>
-            <Route path="/breakfast" element={<Breakfast />}></Route>
-            <Route path="/lunch" element={<Lunch />}></Route>
-            <Route path="/desserts" element={<Desserts />}></Route>
-            <Route path="/sides" element={<Sides />}></Route>
-            <Route path="/drinks" element={<Drinks />}></Route>
-            {<Route path="/recipe" element={<Recipe />}></Route>}
+            <Route
+              path="/home"
+              element={<Home recipes={filteredRecipe} />}
+            ></Route>
+            <Route
+              path="/entrees"
+              element={<Entrees recipes={filteredRecipe} />}
+            ></Route>
+            <Route
+              path="/breakfast"
+              element={<Breakfast recipes={filteredRecipe} />}
+            ></Route>
+            <Route
+              path="/lunch"
+              element={<Lunch recipes={filteredRecipe} />}
+            ></Route>
+            <Route
+              path="/desserts"
+              element={<Desserts recipes={filteredRecipe} />}
+            ></Route>
+            <Route
+              path="/sides"
+              element={<Sides recipes={filteredRecipe} />}
+            ></Route>
+            <Route
+              path="/drinks"
+              element={<Drinks recipes={filteredRecipe} />}
+            ></Route>
+            {
+              <Route
+                path="/recipe"
+                element={<Recipe recipes={filteredRecipe} />}
+              ></Route>
+            }
           </Routes>
         </div>
       </>

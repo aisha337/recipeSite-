@@ -1,17 +1,23 @@
 export const dessertsArray = [
   {
     image:
-      "https://www.thelittleepicurean.com/wp-content/uploads/2019/04/blueberry-banana-french-toast-1.jpg",
-    title: "Blueberry + Banana french toast",
+      "https://www.ihearteating.com/wp-content/uploads/2024/01/Chocolate-Chip-Cookies-15-1200-1.jpg",
+    title: "Chewy Chocolate Chip Cookies",
     tab: "Desserts",
-    duration: "20 minutes",
+    duration: "25 minutes",
   },
-
   {
     image:
-      "https://thaicaliente.com/wp-content/uploads/2021/05/Brunch-Toast-4.webp",
-    title: "Breakfast toast: 3 different ways",
+      "https://www.loveandlemons.com/wp-content/uploads/2020/06/strawberry-shortcake.jpg",
+    title: "Classic Strawberry Shortcake",
     tab: "Desserts",
     duration: "30 minutes",
+  },
+  {
+    image:
+      "https://www.livingchirpy.com/wp-content/uploads/2016/02/cheesecakecups.02.jpg",
+    title: "No-Bake Cheesecake Cups",
+    tab: "Desserts",
+    duration: "15 minutes",
   },
 ];

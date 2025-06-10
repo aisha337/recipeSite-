@@ -1,17 +1,24 @@
 export const drinksArray = [
   {
     image:
-      "https://www.thelittleepicurean.com/wp-content/uploads/2019/04/blueberry-banana-french-toast-1.jpg",
-    title: "Blueberry + Banana french toast",
+      "https://frostingandfettuccine.com/wp-content/uploads/2022/12/Vanilla-Iced-Coffee-5-683x1024.jpg",
+    title: "Iced Coffee with Milk and Vanilla",
     tab: "Drinks",
-    duration: "20 minutes",
+    duration: "5 minutes",
   },
 
   {
     image:
-      "https://thaicaliente.com/wp-content/uploads/2021/05/Brunch-Toast-4.webp",
-    title: "Breakfast toast: 3 different ways",
+      "https://divascancook.com/wp-content/uploads/2024/04/strawberry-lemonade-recipe.png.webp",
+    title: "Fresh Strawberry Lemonade",
     tab: "Drinks",
-    duration: "30 minutes",
+    duration: "10 minutes",
+  },
+  {
+    image:
+      "https://cookingformysoul.com/wp-content/uploads/2022/06/watermelon-slushie-drink-2-min.jpg",
+    title: "Refreshing Watermelon Slush",
+    tab: "Drinks",
+    duration: "5 minutes",
   },
 ];
